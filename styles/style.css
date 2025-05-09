@@ -6,11 +6,372 @@
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
+✦ button__text — для обозначения текстового элемента внутри кнопки 
 
 */
+
+/* ------------- Анимации  ------------- */
+@keyframes button-like{
+  0%{
+    background-color: transparent;
+  }
+  100%{
+    background-color: #000;
+  }
+}
+
+button{
+  cursor: pointer;
+}
+
+.wrapper{
+  inline-size: 100%;
+}
+
+.header__wrapper{
+  padding-inline-start: 14px;
+  padding-inline-end: 14px;
+  padding-block-start: 120px;
+  padding-block-end: 120px;
+}
 
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font-family);
+  
+}
+
+.header{
+  font-family: var(--accent-font-family);
+}
+
+.header__text{
+  text-align: center;
+}
+
+.header__title{
+  font-size: 49px;
+}
+
+.header__subtitle{
+  font-size: 14px;
+}
+
+
+
+
+.main__wrapper{
+  display: flex;
+  flex-direction: column;
+  row-gap: 52px;
+}
+
+.article{
+  inline-size: 100%;
+  font-family: var(--main-font-family);
+  font-size: 18px;
+  border: 2px solid #000;
+}
+
+.article__title{
+  font-size: 18px;
+  font-weight: 700;
+  
+  padding: 4px 10px 6px 10px;
+}
+
+.article__img-wrapper{
+  position: relative;
+}
+
+@supports (text-stroke: 4px #fff) {
+  .article__label {
+    text-stroke: 1px var(--text-stroke);
+  }
+} 
+
+.article__label{
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  position: absolute;
+  inset-block-start: 25px;
+  inset-inline-end: 11px;
+  -webkit-text-stroke: 1px var(--text-stroke);
+  opacity: 0.5;
+  text-shadow: 2px 4px 3px rgb(0 0 0 / 0.5);
+}
+
+.article__img{
+  inline-size: 100%;
+  block-size: 100%;
+  max-block-size: 100%;
+  object-fit: cover;
+}
+
+.article__content-text{
+  padding: 25px;
+}
+
+.article__text{
+  line-height: 1.17em;
+  
+}
+
+.article__text:not(:last-of-type){
+  margin-block-end: 1.5em;
+}
+
+.article__text:last-of-type{
+  margin-block-end: 1.39em;
+}
+
+.article__buttons{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  column-gap: 12px;
+}
+
+/* Иконка сердца */
+.contour {
+  fill: var(--heart-contour);
+  transition-duration: 0.1s;
+}
+
+.main-body{
+  opacity: 0;
+  transition: 0.3s;
+  transition-delay: 0s;
+}
+
+.article__button-heart:hover .main-body{
+  opacity: 1;
+  transition-delay: 0.05s;
+}
+
+.article__button-heart:active .main-body{
+  opacity: 1;
+  transition-delay: 0.05s;
+  fill: #ff0000;
+}
+
+.core{
+  opacity: 0;
+  transition: 0.3s;
+  transition-delay: 0.03s;
+}
+
+.article__button-heart:hover .core{
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+.article__button-heart:active .core{
+  opacity: 1;
+  transition-delay: 0s;
+  fill: #ff0000;
+}
+
+
+.sparks{
+  opacity: 0;
+}
+
+/* Клик по иконке сердца */
+.is-liked .heart {
+  transform-origin: center;
+  animation-name: heart-scale;
+  animation-delay: 0.1s;
+  animation-direction: alternate;
+  animation-timing-function: ease-in;
+  animation-duration: 0.3s;
+}
+
+.like-icon.is-liked .sparks {
+  animation-name: heart-spark;
+  animation-delay: 0.3s;
+  animation-timing-function: ease-in;
+  animation-duration: 0.3s;
+}
+
+.like-icon.is-liked .core {
+  opacity: 1;
+  fill: #FF0000;
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+}
+
+.like-icon.is-liked .main-body {
+  opacity: 1;
+  fill: #FF0000;
+  transition-delay: 0.03s;
+  transition-duration: 0.3s;
+}
+
+.like-icon.is-liked .contour {
+  fill: #FF0000;
+  transition-delay: 0.06s;
+  transition-duration: 0.3s;
+}
+
+
+/* Основная конпка */
+.general-btn{
+  position: relative;
+  border: 2px solid var(--accent-color);
+}
+
+.general-btn::before{
+  content: '';
+  inline-size: 100%;
+  block-size: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.general-btn:hover.general-btn::before{
+  transform: scaleX(1);
+}
+
+.general-btn:focus{
+  outline: none;
+}
+
+.general-btn:focus-visible{
+  box-shadow: 2px 2px 0 0 var(--accent-color, #000);
+  transition-duration: 0.5s;
+}
+
+.general-btn__text{
+  position: relative;
+  z-index: 2;
+  font-family: var(--accent-font-family);
+  font-size: var(--font-size-general-btn);
+  color: var(--color-font-button, #fff);
+  mix-blend-mode: difference;
+  font-weight: var(--font-weight-general-btn);
+}
+/* Основная конпка */
+
+
+.article__button-like{
+  /* border: 2px solid #000; */
+  /* padding: 12px 37px; */
+  /* position: relative; */
+  min-block-size: 38px;
+  min-inline-size: 130px;
+  padding: 0;
+}
+
+.article__button-like:focus{
+  outline: none;
+}
+
+.article__button-like:focus-visible{
+  box-shadow: 2px 2px 0 0 var(--accent-color, #000);
+  transition-duration: 0.5s;
+}
+
+.article__button-like::before{
+  content: '';
+  inline-size: 100%;
+  block-size: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.article__button-like:hover.article__button-like::before{
+  transform: scaleX(1);
+}
+
+
+
+
+
+.article__button-heart{
+  border: 2px solid transparent;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 38px; 
+}
+
+.article__button-heart:focus{
+  outline: none;
+}
+
+.article__button-heart:focus-visible{
+  border-color: var(--accent-color, #000);
+  transition: border 0.3s ease;
+}
+
+
+
+
+.footer__wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__button{
+  display: flex;
+  align-items: center;
+}
+
+.footer__floppy{
+  
+  /* block-size: 21px;
+  inline-size: 21px; */
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: contain;
+  /* mix-blend-mode: difference; */
+}
+
+
+
+@media (width >= 375px) {
+  
+  .wrapper{
+    inline-size: var(--wrapper-inline-size);
+    margin: 0 auto;
+  }
+
+  .header__wrapper{
+    padding-inline-start: var(--inline-padding-header);
+    padding-inline-end: var(--inline-padding-header);
+    padding-block-start: var(--block-padding-header);
+    padding-block-end: var(--block-padding-header);
+  }
+
+  .header__title{
+    font-size: var(--font-size-header-title);
+  }
+
+  .header__subtitle{
+    font-size: var(--font-size-header-subtitle);
+  }
+
+  .article__label{
+    inset-block-start: 27px;
+    inset-inline-end: 25px;
+  }
+
+
 }

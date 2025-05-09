@@ -1,1 +1,29 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --main-font-family: 'Inter-Variable', arial;    /* Шрифт основного текста (вариативного) */
+    --accent-font-family: 'PressStart2P', arial;    /* Акцентный шрифт */
+
+    --accent-font-content-weight: 400;              /* Вес текста карточки */
+    --accent-font-title-weight: 700;                /* Вес заголовка карточки */
+
+    --wrapper-inline-size: clamp(23.438rem, 16.285rem + 30.52vw, 43.75rem);     /* Ширина блока wrapper */
+    --font-size-header-title: clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem);       /* Font-size заголовка в шапке */ 
+    --font-size-header-subtitle: clamp(0.875rem, 0.677rem + 0.85vw, 1.438rem);  /* Font-size subtitle в шапке */
+
+    --inline-padding-header: clamp(0.875rem, -1.458rem + 9.95vw, 7.5rem);       /* inline-padding в шапке */
+    --block-padding-header: clamp(7.5rem, 7.324rem + 0.75vw, 8rem);             /* block-padding в шапке */
+
+    --text-stroke: #fff;            /* цвет обводки */
+
+    --accent-color: #000;           /* акцентный цвет */
+
+    --color-font-button: #fff;      /* цвет текста кнопки для смешивания */
+    --font-size-general-btn: 14px;    /* размер шрифта кнопок */
+    --font-weight-general-btn: 400;   /* жирность шрифта кнопок */
+
+    --heart-contour: #000;          /* цвет контура иконки сердца */
+    --heart-main-body: #000;        /* цвет тела иконки сердца */
+    --heart-core: #000;             /* цвет сердцевины иконки сердца */
+    --heart-sparks: #FF0000;        /* цвет искр иконки сердца */
+
+}
