@@ -6,6 +6,26 @@
     --accent-font-content-weight: 400;              /* Вес текста карточки */
     --accent-font-title-weight: 700;                /* Вес заголовка карточки */
 
+    --bg-image: repeating-linear-gradient(
+    to right,
+    #d3d3d3 0px,
+    #d3d3d3 2px,
+    transparent 2px,
+    transparent 4px
+  ),
+  repeating-linear-gradient(
+    to bottom,
+    #d3d3d3 0px,
+    #d3d3d3 2px,
+    transparent 2px,
+    transparent 4px
+  ),
+  linear-gradient(
+    to bottom,
+    #e7e7e7 0.01%,
+    #1a1a1a
+  );
+
     --wrapper-inline-size: clamp(23.438rem, 16.285rem + 30.52vw, 43.75rem);     /* Ширина блока wrapper */
     --font-size-header-title: clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem);       /* Font-size заголовка в шапке */ 
     --font-size-header-subtitle: clamp(0.875rem, 0.677rem + 0.85vw, 1.438rem);  /* Font-size subtitle в шапке */
@@ -24,6 +44,6 @@
     --heart-contour: #000;          /* цвет контура иконки сердца */
     --heart-main-body: #000;        /* цвет тела иконки сердца */
     --heart-core: #000;             /* цвет сердцевины иконки сердца */
-    --heart-sparks: #FF0000;        /* цвет искр иконки сердца */
+    --heart-sparks-core-body: #FF0000;        /* цвет искр, сердцевины и тела иконки сердца */
 
 }
