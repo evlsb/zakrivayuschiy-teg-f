@@ -1,0 +1,25 @@
+{
+  "name": "posmotri-v-okno-fd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'Привет!'",
+    "check": "prettier --check './**/*.{html,css}'",
+    "format": "prettier --write './**/*.{html,css}''"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evlsb/posmotri-v-okno-fd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evlsb/posmotri-v-okno-fd/issues"
+  },
+  "homepage": "https://github.com/evlsb/posmotri-v-okno-fd#readme",
+  "description": "",
+  "dependencies": {
+    "prettier": "^3.4.2",
+    "stylelint": "^16.14.0"
+  }
+}

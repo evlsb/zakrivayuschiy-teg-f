@@ -10,26 +10,35 @@
 
 */
 
-@keyframes heart-scale{
-    0% {
-      scale: 1;
-    }
-    50% {
-      scale: 1.25;
-    }
-    100% {
-      scale: 1;
-    }
+@keyframes button-like {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #000;
+  }
 }
 
-@keyframes heart-spark{
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+@keyframes heart-scale {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.25;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes heart-spark {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
