@@ -371,9 +371,6 @@ button {
   width: 360px;
   padding-block: 30px;
   padding-inline: 27px;
-  pointer-events: none;
-  opacity: 0.3;
-  z-index: 1;
 }
 
 .dialog::backdrop {
