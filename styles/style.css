@@ -117,16 +117,6 @@ button {
   block-size: calc(var(--wrapper-inline-size) - 4px);
 }
 
-@supports (
-  (text-stroke: 4px #fff) or (-webkit-text-stroke: 1px var(--text-stroke))
-) {
-  .article__label {
-    text-shadow: none;
-    -webkit-text-stroke: 1px var(--text-stroke);
-    text-stroke: 1px var(--text-stroke);
-  }
-}
-
 .article__label {
   font-family: var(--accent-font-family);
   font-size: 14px;
@@ -136,8 +126,18 @@ button {
   inset-block-start: 25px;
   inset-inline-end: 11px;
   opacity: 0.5;
-  text-shadow: 2px 4px 3px rgb(255 255 255 / 0.5);
+  text-shadow: 2px 4px 3px rgba(255, 255, 255, 1);
   mix-blend-mode: hard-light;
+}
+
+@supports (
+  (text-stroke: 4px #fff) or (-webkit-text-stroke: 1px var(--text-stroke))
+) {
+  .article__label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--text-stroke);
+    text-stroke: 1px var(--text-stroke);
+  }
 }
 
 .article__img {
@@ -348,6 +348,7 @@ button {
   align-items: center;
   padding-block: 15px;
   padding-inline: 20px;
+  background-color: #fff;
 }
 
 .floppy {
@@ -370,7 +371,7 @@ button {
   row-gap: 31px;
   width: 360px;
   padding-block: 30px;
-  padding-inline: 27px;
+  padding-inline: 37px;
 }
 
 .dialog::backdrop {
@@ -388,6 +389,7 @@ button {
   text-transform: uppercase;
   font-weight: bold;
   line-height: 1.3rem;
+  max-width: 198px;
 }
 
 .dialog__btn {
@@ -439,7 +441,7 @@ button {
 
   .save__button {
     flex-direction: row;
-    background-color: #fff;
+    
   }
 
   .save__floppy {
@@ -453,5 +455,9 @@ button {
 
   .dialog__btn {
     padding-block: 6px;
+  }
+
+  .dialog__text{
+    max-width: 234px;
   }
 }
