@@ -441,7 +441,6 @@ button {
 
   .save__button {
     flex-direction: row;
-    
   }
 
   .save__floppy {
@@ -457,7 +456,7 @@ button {
     padding-block: 6px;
   }
 
-  .dialog__text{
+  .dialog__text {
     max-width: 234px;
   }
 }
